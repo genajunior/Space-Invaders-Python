@@ -1,6 +1,5 @@
 #Diamond  Ship - Part 1
 #Set up the screen
-# 
 import turtle 
 import os 
 
@@ -43,7 +42,27 @@ enemy.setposition(-200, 250)
 
 enemyspeed =2
 #Move the plater left and right
+#Creat the player's bullet
+bullet = turtle.Turtle()
+bullet._color("pink")
+bullet.shape("triangle")
+bullet.penup()
+bullet.speed(0)
+bullet.setheading(90)
+bullet.shapesize(0.5, 0.5)
+
+
+bullet.hideturtle()
+
+
+#Define bullet state
+#ready - ready to fire
+#fire - bullet is firing
+bulletstate = "ready"
+
+bulletspeed = 20
 def move_left():
+
     x = player.xcor()
     x-= playerspeed
     if x < -280:
