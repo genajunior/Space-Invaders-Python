@@ -2,7 +2,7 @@
 #Set up the screen
 import turtle 
 import os 
-
+import math
 # Set up the screen 
 wn = turtle.Screen()
 wn.bgcolor("purple")
@@ -78,18 +78,22 @@ def move_right():
     player.setx(x)
 
 
-
+def fire_bullet() :
 #Create keyboared bindings
-turtle.Screen().listen()
-turtle.Screen().onkey(move_left, "Left")
-turtle.Screen().onkey(move_right, "Right")
+    turtle.Screen().listen()
+    turtle.Screen().onkey(move_left, "Left")
+    turtle.Screen().onkey(move_right, "Right")
+#move the bullet to the just above the plaer
+x = player.xcor()
+y = player .ycor()
+bullet.setposition(x, y)
+bullet.showturtle()
+
+def isCollsion(t1, t2) :
+    distance=math.sqrt(math.pow(t1.xcor()-t2.xcor(),2)+math.pow(t1.xcor()-t2.xcor()))
 
 
-
-
-
-
-
+ 
 
 
 #Main game loop 
